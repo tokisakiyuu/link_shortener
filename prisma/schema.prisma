@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model LinkMap {
+  id        Int       @id @default(autoincrement())
+  user_ip   String
+  link      String    @unique
+  key       String    @unique
+  expire_at DateTime?
+}

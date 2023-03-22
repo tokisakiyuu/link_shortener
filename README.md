@@ -1,38 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 短链接生成
 
-## Getting Started
+[***实验项目，不要用于正式用途***]
 
-First, run the development server:
+全栈零成本开发，从想法到上线没有产生任何金钱支出，如果作为一个小范围内使用的工具类网站的话还可以承诺长期都不会产生金钱支出。此仓库中的代码不是重点。
+
+在线体验：[https://tksk.eu.org/](https://tksk.eu.org/)
+
+## "Free Plan"
+
+以下是本项目用到的免费资源。
+
+### 域名
+
+[eu.org](https://nic.eu.org/) 这个组织长期提供永久免费的二级域名。需申请和审核，但审核门槛非常低，一旦审核通过，就获得了这个域名的永久归属且不用续约。
+
+### CDN
+
+[cloudflare](https://www.cloudflare.com/) 提供免费的CDN网络服务和应用防火墙服务。使用没有门槛。前面得到的免费域名就交给它来管理。
+
+### 数据库
+
+[planetscale](https://planetscale.com) 提供免费的MySQL数据库和备份服务，容量5G，读写次数每月有限额，但是个人使用几乎用不完的。
+
+### 网站静态内容托管和Serverless服务
+
+由 [vercel](https://vercel.com/) + [nextjs](https://nextjs.org/) 提供长期的托管服务，虽然也有每月限额，但是依然是个人几乎是用不完。
+
+## 本地运行
+
+1. 安装依赖
+
+```bash
+pnpm install
+```
+
+2. 在根目录创建`.env`文件并参照`.env.example`填入相关环境变量
+
+3. 初始化数据库
+
+```bash
+npm run push-db
+```
+
+4. 开始调试运行
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
