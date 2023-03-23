@@ -17,6 +17,7 @@
   margin: 0 auto;
   max-width: 460px;
   width: 100%;
+  background-color: rgb(59, 59, 59);
   outline: none;
   border: none;
   font-size: 1.1em;
@@ -38,6 +39,7 @@
   border-radius: 25px;
   letter-spacing: 4px;
   cursor: pointer;
+  user-select: none;
   border: 2px transparent solid;
   transition: .2s border-color;
   &:hover {

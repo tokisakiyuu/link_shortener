@@ -18,6 +18,7 @@ const Home: NextPage<PageProps> = ({ generatedCount }) => {
   const [loading, setLoading] = useState(false)
   const submit = async () => {
     if (!link) return
+    if (isCurrentHostLink(link)) return
     setLoading(true)
     const res = await axios.get(`/api/shortener?link=${encodeURIComponent(link)}`)
     setLoading(false)
@@ -79,4 +80,14 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
       generatedCount: count
     }
   }
+}
+
+function isCurrentHostLink(link: string) {
+  const { hostname, port, host } = new URL(link)
+  if (isLoopbackAddress(hostname) && isLoopbackAddress(location.hostname) && port == location.port) return true
+  return host === location.host
+}
+
+function isLoopbackAddress(address: string) {
+  return ['127.0.0.1', 'localhost'].includes(address)
 }
